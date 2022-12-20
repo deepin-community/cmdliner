@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+DESTDIR=$(CURDIR)/debian/tmp
+
+include /usr/share/ocaml/ocamlvars.mk
+
+%:
+	dh $@ --with ocaml --no-parallel
+
+.PHONY: override_dh_auto_install
+override_dh_auto_install:
+	make DESTDIR=$(DESTDIR) install
+
+.PHONY: override_dh_install
+override_dh_install:
+	dh_install --exclude=opam
+
+.PHONY: override_dh_missing
+override_dh_missing:
+	dh_missing --fail-missing

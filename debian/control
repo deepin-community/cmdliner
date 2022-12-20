@@ -1,0 +1,40 @@
+Source: cmdliner
+Section: ocaml
+Priority: optional
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Uploaders:
+ Mehdi Dogguy <mehdi@debian.org>,
+ Stéphane Glondu <glondu@debian.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ ocaml-nox,
+ ocaml-findlib,
+ ocamlbuild,
+ libresult-ocaml-dev,
+ dh-ocaml
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: http://erratique.ch/software/cmdliner
+Vcs-Git: https://salsa.debian.org/ocaml-team/cmdliner.git
+Vcs-Browser: https://salsa.debian.org/ocaml-team/cmdliner
+
+Package: libcmdliner-ocaml-dev
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Suggests:
+ ocaml-findlib
+Provides:
+ ${ocaml:Provides}
+Description: declarative definition of command line interfaces
+ It provides a simple and compositional mechanism to convert command
+ line arguments to OCaml values and pass them to your functions.
+ The module automatically handles syntax errors, help messages and
+ UNIX man page generation. It supports programs with single or
+ multiple commands (like darcs or git) and respects most of the POSIX
+ and GNU conventions.
+ .
+ This package contains the development modules you need to use Cmdliner
+ in your programs.

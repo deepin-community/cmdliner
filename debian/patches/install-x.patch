@@ -1,0 +1,45 @@
+From: Hendrik Tews <hendrik@askra.de>
+Date: Tue, 23 Jul 2019 09:38:37 +0200
+Subject: install without adding execute permissions
+
+---
+ Makefile | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 1d2ffd4..e116b6f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -41,7 +41,7 @@ install: $(INSTALL-TARGETS)
+ 
+ install-doc:
+ 	$(INSTALL) -d $(DOCDIR)
+-	$(INSTALL) CHANGES.md LICENSE.md README.md $(DOCDIR)
++	$(INSTALL) -m 644 CHANGES.md LICENSE.md README.md $(DOCDIR)
+ 
+ clean:
+ 	ocaml build.ml clean
+@@ -59,18 +59,18 @@ create-libdir:
+ 	$(INSTALL) -d $(LIBDIR)
+ 
+ install-common: create-libdir
+-	$(INSTALL) pkg/META $(BASE).mli $(BASE).cmi $(BASE).cmti $(LIBDIR)
+-	$(INSTALL) cmdliner.opam $(LIBDIR)/opam
++	$(INSTALL) -m 644 pkg/META $(BASE).mli $(BASE).cmi $(BASE).cmti $(LIBDIR)
++	$(INSTALL) -m 644 cmdliner.opam $(LIBDIR)/opam
+ 
+ install-byte: create-libdir
+-	$(INSTALL) $(BASE).cma $(LIBDIR)
++	$(INSTALL) -m 644 $(BASE).cma $(LIBDIR)
+ 
+ install-native: create-libdir
+-	$(INSTALL) $(BASE).cmxa $(BASE)$(EXT_LIB) $(wildcard $(B)/cmdliner*.cmx) \
++	$(INSTALL) -m 644 $(BASE).cmxa $(BASE)$(EXT_LIB) $(wildcard $(B)/cmdliner*.cmx) \
+   $(LIBDIR)
+ 
+ install-native-dynlink: create-libdir
+-	$(INSTALL) $(BASE).cmxs $(LIBDIR)
++	$(INSTALL) -m 644 $(BASE).cmxs $(LIBDIR)
+ 
+ .PHONY: all install install-doc clean build-byte build-native \
+ 	build-native-dynlink create-libdir install-common install-byte \

@@ -1,0 +1,86 @@
+cmdliner (1.0.4-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 17:56:25 +0800
+
+cmdliner (1.0.4-2) unstable; urgency=medium
+
+  * debian/rules:
+    - do not export BUILD_PATH_PREFIX_MAP
+    - include ocamlvars.mk
+  * Build-depend on debhelper-compat
+  * Bump Standards-Version to 4.5.0
+  * Add Rules-Requires-Root: no
+
+ -- Stéphane Glondu <glondu@debian.org>  Tue, 28 Jan 2020 08:47:44 +0100
+
+cmdliner (1.0.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.4.0
+  * Bump debhelper compat level to 12
+  * Uploaders: remove Hendrik and add myself
+
+ -- Stéphane Glondu <glondu@debian.org>  Tue, 23 Jul 2019 15:30:31 +0200
+
+cmdliner (1.0.2-1) unstable; urgency=medium
+
+  [ Hendrik Tews ]
+  * New upstream version 1.0.2
+  * compat level 10, standards version 4.0.0
+  * add build dependency libresult-ocaml-dev
+  * update VCS fields
+  * add myself to uploaders
+  * updated copyright
+  * update rules: remove most of the overrides, build sequential because
+    ocamlbuild would otherwise fail
+  * remove .doc-base file: there is no documentation any more
+  * fix .docs file
+  * add patch install-x for removing x-permission in make install
+  * add README.Debian to point to the online documentation
+  * generate documentation with dh_ocamldoc, the command line switches in
+    libcmdliner-ocaml-dev.ocamldoc have been copied from a run of ``topkg doc''
+  * remove README.Debian again
+
+  [ Mehdi Dogguy ]
+  * Update Vcs-* fields to target Salsa
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Fri, 11 May 2018 15:30:44 +0200
+
+cmdliner (0.9.8-2) unstable; urgency=medium
+
+  * Team upload
+  * Add ocamlbuild to Build-Depends
+
+ -- Stéphane Glondu <glondu@debian.org>  Sat, 15 Jul 2017 16:06:19 +0200
+
+cmdliner (0.9.8-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Mon, 18 Jan 2016 00:35:03 +0100
+
+cmdliner (0.9.7-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Update debian/watch
+  * Update Vcs-*
+  * Bump Standards-Version to 3.9.6
+
+ -- Stéphane Glondu <glondu@debian.org>  Tue, 07 Jul 2015 11:22:00 +0200
+
+cmdliner (0.9.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Use a new build system in order to avoid unnecessary new build
+    dependencies.
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Thu, 27 Mar 2014 21:50:58 +0100
+
+cmdliner (0.9.3-1) unstable; urgency=low
+
+  * Initial upload (Closes: #641986)
+
+ -- Mehdi Dogguy <mehdi@debian.org>  Sun, 06 Jan 2013 10:50:00 +0200
