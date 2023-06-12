@@ -1,8 +1,10 @@
-cmdliner (1.0.4-deepin1) unstable; urgency=medium
+cmdliner (1.1.1-1) unstable; urgency=medium
 
-  * Rebuild
+  * Team upload.
+  * New upstream release.
+  * Refresh patch.
 
- -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 17:56:25 +0800
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 29 Jun 2022 11:33:06 +0200
 
 cmdliner (1.0.4-2) unstable; urgency=medium
 
