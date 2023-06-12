@@ -6,20 +6,18 @@ Subject: install without adding execute permissions
  Makefile | 12 ++++++------
  1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/Makefile b/Makefile
-index 1d2ffd4..e116b6f 100644
---- a/Makefile
-+++ b/Makefile
-@@ -41,7 +41,7 @@ install: $(INSTALL-TARGETS)
+--- cmdliner.orig/Makefile
++++ cmdliner/Makefile
+@@ -41,7 +41,7 @@
  
  install-doc:
- 	$(INSTALL) -d $(DOCDIR)
+ 	$(INSTALL) -d $(DOCDIR)/odoc-pages
 -	$(INSTALL) CHANGES.md LICENSE.md README.md $(DOCDIR)
 +	$(INSTALL) -m 644 CHANGES.md LICENSE.md README.md $(DOCDIR)
+ 	$(INSTALL) doc/index.mld doc/cli.mld doc/examples.mld doc/tutorial.mld \
+ 	           doc/tool_man.mld $(DOCDIR)/odoc-pages
  
- clean:
- 	ocaml build.ml clean
-@@ -59,18 +59,18 @@ create-libdir:
+@@ -61,18 +61,18 @@
  	$(INSTALL) -d $(LIBDIR)
  
  install-common: create-libdir
